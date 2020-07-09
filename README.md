@@ -1,1 +1,1 @@
-# coding_test
+# coding_test 준비
