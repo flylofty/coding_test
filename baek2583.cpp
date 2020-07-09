@@ -1,28 +1,20 @@
 #include <iostream>
 #include <queue>
+#include <vector>
 
 using namespace std;
 
 int M = 0, N = 0, K = 0;
 bool isVisited[100][100]{ false };
-int paper[100][100]{ 0 };
+vector<vector<int>> paper(100, vector<int>(100, 1));
 int dir[4][2] = { {-1, 0}, {0, 1}, {1, 0}, {0, -1} };
-
-void tfPrint() {
-	for (int i = 0; i < M; ++i) {
-		for (int j = 0; j < N; ++j) {
-			cout << paper[i][j] << "  ";
-		}
-		cout << endl;
-	}
-}
 
 void drawPaper(int &a, int &b, int &c, int &d) {
 
 	for (int i = M - d; i < M - b; ++i) {
 		for (int j = a; j < c; ++j) {
 			isVisited[i][j] = true;
-			paper[i][j] = 1;
+			paper[i][j] = 0;
 		}
 	}
 }
@@ -53,7 +45,7 @@ int BFS(int x, int y) {
 			int next_x = cur_x + dir[i][0];
 			int next_y = cur_y + dir[i][1];
 
-			if (isIn(next_x, next_y) && isVisited[next_x][next_y] == false && paper[next_x][next_y] == 0) {
+			if (isIn(next_x, next_y) && isVisited[next_x][next_y] == false) {
 				isVisited[next_x][next_y] = true;
 				q.push(pair<int, int>(next_x, next_y));
 			}
@@ -65,8 +57,6 @@ int BFS(int x, int y) {
 }
 
 void findResult() {
-
-	//tfPrint();
 
 	priority_queue<int, vector<int>, greater<int>> area;
 	int cnt = 0;
