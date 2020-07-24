@@ -3,7 +3,7 @@
 #include <vector>
 
 using namespace std;
-// 프로그래머스 연습문제 > 자연수 뒤집어 배열로 만들기.
+// 프로그래머스 연습문제 > 자연수 뒤집어 배열로 만들기
 vector<int> solution(long long n) {
 	
 	long long num = n;
