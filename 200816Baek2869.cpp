@@ -15,7 +15,7 @@ int main() {
 	if (V % (A - B) != 0)
 		right++;
 
-	long long answer; // '='를 빼머리면 틀린 정답이 나올 수 있음. 
+	long long answer; // '=' 빼머리면 답이 나오지 않을 수 있음 
 	while (left <= right) { // 반례 8 7 27 
 		int day = (left + right) / 2;
 
