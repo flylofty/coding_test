@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+// 학교 실습 코드
 typedef struct DoublyLinkedList {
 	struct DoublyLinkedList* prev;
 	struct DoublyLinkedList* next;
