@@ -2,7 +2,7 @@
 #include <string>
 #include <vector>
 #include <algorithm>
-// 2019 KAKAO BLIND RECRUITMENT 후보키
+
 using namespace std;
 
 int n = 0;
@@ -38,8 +38,6 @@ int solution(vector<vector<string>> relation) {
 		vector<int> temp;
 		dfs(temp, i);
 	}
-
-	vector<bool> check(n, false);
 
 	for (int a = 0; a < v.size(); ++a)
 	{
