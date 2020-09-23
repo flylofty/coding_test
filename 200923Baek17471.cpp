@@ -8,7 +8,6 @@ int N = 0;
 vector<int> gu(11, 0);
 vector<int> adj[11];
 int Min = 900;
-int sum2 = 0;
 
 bool isConnected(vector<int> v, vector<bool> location, bool near) // BFS
 {
@@ -62,20 +61,6 @@ void findMin(vector<bool> temp)
 			b += gu[i];
 		}
 	}
-
-	cout << "\n=========================\n";
-	for (int i = 0; i < V1.size(); ++i)
-	{
-		cout << V1[i] << " ";
-	}
-	cout << "\n--------------------------\n";
-	for (int i = 0; i < V2.size(); ++i)
-	{
-		cout << V2[i] << " ";
-	}
-	cout << "\n=========================\n";
-
-	sum2++;
 
 	if (!isConnected(V1, temp, true)) return;
 	if (!isConnected(V2, temp, false)) return;
@@ -134,7 +119,6 @@ void findAnswer() {
 int main() {
 
 	findAnswer();
-	cout << "\n cnt: " << sum2 << endl;
 
 	if (Min == 900)
 		cout << "-1\n";
