@@ -38,7 +38,7 @@ int find(int a) {
 	else return sack[a] = find(sack[a]);
 }
 
-bool isSameSack(int a, int b) {
+bool isSamePack(int a, int b) {
 	a = find(a);
 	b = find(b);
 
