@@ -10,10 +10,6 @@ vector<int> sack;
 
 void input() {
 
-	ios_base::sync_with_stdio(0);
-	cin.tie(0);
-	cout.tie(0);
-
 	cin >> N; // 정점의 개수
 	sack.resize(N + 1, 0);
 	for (int i = 1; i <= N; ++i) sack[i] = i;
@@ -59,7 +55,7 @@ void findAnswer() {
 		int n1 = nodes[i].second.first;
 		int n2 = nodes[i].second.second;
 
-		if (!isSameSack(n1, n2)) {
+		if (!isSamePack(n1, n2)) {
 			sum += nodes[i].first;
 			cnt++;
 		}
